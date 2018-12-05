@@ -1,0 +1,16 @@
+version: "3"
+services:
+  gateway:
+    deploy:
+      placement:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.40'
+          memory: 128M
+      restart_policy:
+        condition: any
+        delay: 5s
+    image: chrisns/monocole:${DRONE_BUILD_NUMBER}
+    environment:
+      - TOKEN=${TOKEN}
