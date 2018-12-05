@@ -2,7 +2,6 @@ version: "3"
 services:
   gateway:
     deploy:
-      placement:
       replicas: 1
       resources:
         limits:
